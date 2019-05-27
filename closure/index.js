@@ -1,6 +1,8 @@
 const name = "Alice";
 
-function Person() {
+// closure refers to the ability of the function to contain its own name variable
+// purpose of this exercise is to set your own parameters to override global variable w the same name
+function Person(name = "Bob") {
   const hobbies = ["coding", "swimming", "hiking"];
 
   function about() {
@@ -21,6 +23,10 @@ function Person() {
   };
 }
 
-const bob = Person();
+const bob = Person("Bob");
 bob.sayName();
 bob.about();
+
+const sarah = Person("Sarah");
+sarah.sayName();
+sarah.about();
